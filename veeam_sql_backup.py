@@ -1,10 +1,34 @@
 import requests
 import json
 
-veeam_api_url = "add url"
-veaam_api_username = "my_username"
-veamm_api_password = "my_password"
+veeam_api_url = "https://your-veeam-server/api"
+veeam_api_username = "your_username"
+veeam_api_password = "your_password"
 
 session = requests.Session()
-session.verify = False # If needed for Veeam server SSL certificate
+session.verify = False  # Might use it if Veeam server has a self-signed SSL certificate
 
+login_url = f"{veeam_api_url}/token"
+login_payload = {
+    "grant_type": "password",
+    "username": veeam_api_username,
+    "password": veeam_api_password,
+}
+response = session.post(login_url, json=login_payload)
+token_data = response.json()
+
+if "access_token" in token_data:
+    access_token = token_data["access_token"]
+    session.headers.update({"Authorization": f"Bearer {access_token}"})
+    print("Authenticated successfully!")
+
+    jobs_url = f"{veeam_api_url}/jobs"
+    response = session.get(jobs_url)
+    jobs_data = response.json()
+    print("List of Veeam jobs:")
+    for job in jobs_data:
+        print(f"Job ID: {job['Id']}, Name: {job['Name']}")
+
+
+else:
+    print("Authentication failed. Check your credentials.")

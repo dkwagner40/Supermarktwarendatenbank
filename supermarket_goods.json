@@ -1,0 +1,43 @@
+[
+    {
+      "product_id": 1,
+      "product_name": "Tofu",
+      "price": 2.49,
+      "category": "Protein",
+      "description": "Bio-Tofu, 250g",
+      "stock_quantity": 50
+    },
+    {
+      "product_id": 2,
+      "product_name": "Veganer Käse",
+      "price": 3.99,
+      "category": "Milchersatz",
+      "description": "Pflanzlicher Käse, 200g",
+      "stock_quantity": 30
+    },
+    {
+      "product_id": 3,
+      "product_name": "Maultaschen",
+      "price": 2.99,
+      "category": "Teigwaren",
+      "description": "Glutenfreie Maultaschen, 500g",
+      "stock_quantity": 40
+    },
+    {
+      "product_id": 4,
+      "product_name": "Mandelmilch",
+      "price": 2.29,
+      "category": "Getränke",
+      "description": "Ungesüßte Mandelmilch, 1 Liter",
+      "stock_quantity": 60
+    },
+    {
+      "product_id": 5,
+      "product_name": "Vegane Schokolade",
+      "price": 1.99,
+      "category": "Süßigkeiten",
+      "description": "Vegane Zartbitterschokolade, 100g",
+      "stock_quantity": 80
+    }
+  ]
+  
